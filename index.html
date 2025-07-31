@@ -96,66 +96,100 @@
       box-shadow: 0 0 10px #143826cc, 0 0 20px #14382699;
     }
 
+    /* ここからボタン白色用追加 */
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin-top: 1em;
+    }
+
+    .btn-white {
+      background-color: #fff;
+      color: #000;
+      box-shadow: 0 0 8px #fffccccc, 0 0 15px #fffccc99;
+      border-radius: 8px;
+      padding: 1em 2.5em;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: 0.3s ease;
+    }
+
+    .btn-white:hover {
+      background-color: #f0f0f0;
+      box-shadow: 0 0 10px #f0f0f0cc, 0 0 20px #f0f0f099;
+    }
+
     @media (max-width: 480px) {
       h1 { font-size: 1.8rem; }
       p.description { font-size: 1rem; }
-      .btn { font-size: 0.95rem; padding: 0.8em 2em; }
+      .btn, .btn-white { font-size: 0.95rem; padding: 0.8em 2em; }
+      .btn-group { gap: 0.8em; }
     }
   </style>
 </head>
 <body>
 
-<div class="grid-overlay"></div>
-<div class="fade-bottom"></div>
-<div id="particles-js"></div>
+  <div class="grid-overlay"></div>
+  <div class="fade-bottom"></div>
+  <div id="particles-js"></div>
 
-<main>
-  <h1>
-    唯一無二の<br>
-    本格水冷MOD PC<br>
-    2CRAPH（ツークラフ）
-  </h1>
-  <h2>ツークラフが贈る、水冷PCの新時代</h2>
+  <main>
+    <h1>
+      唯一無二の<br>
+      本格水冷MOD PC<br>
+      2CRAPH（ツークラフ）
+    </h1>
+    <h2>ツークラフが贈る、水冷PCの新時代</h2>
 
-  <p class="description">
-    一点物のオールインワン水冷PC。<br>
-    スリーブケーブル・美しい配管・静音性と冷却性能。<br>
-    第一号モデル、ただいま製作中。
-  </p>
+    <p class="description">
+      一点物のオールインワン水冷PC。<br>
+      スリーブケーブル・美しい配管・静音性と冷却性能。<br>
+      第一号モデル、ただいま製作中。
+    </p>
 
-  <a href="https://www.instagram.com/2craph_pc" class="btn" target="_blank">Instagramをフォロー</a>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn" target="_blank">事前登録</a>
-</main>
+    <div class="btn-group">
+      <a href="https://www.instagram.com/2craph_pc" class="btn btn-white" target="_blank" aria-label="Instagramをフォロー">
+        <svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;" width="20" height="20" fill="#000" viewBox="0 0 24 24">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.25a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm0 1.5a3 3 0 100 6 3 3 0 000-6z"/>
+        </svg>
+        <span style="vertical-align: middle; margin-left: 0.5em;">Instagramをフォロー</span>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn btn-white" target="_blank">事前登録</a>
+    </div>
+  </main>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-  particlesJS('particles-js', {
-    "particles": {
-      "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-      "color": { "value": "#ffd700" },
-      "shape": { "type": "circle" },
-      "opacity": {
-        "value": 0.3,
-        "random": true,
-        "anim": { "enable": true, "speed": 1.5, "opacity_min": 0.1, "sync": false }
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffd700" },
+        "shape": { "type": "circle" },
+        "opacity": {
+          "value": 0.3,
+          "random": true,
+          "anim": { "enable": true, "speed": 1.5, "opacity_min": 0.1, "sync": false }
+        },
+        "size": { "value": 3, "random": true },
+        "move": {
+          "enable": true,
+          "speed": 0.6,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out"
+        }
       },
-      "size": { "value": 3, "random": true },
-      "move": {
-        "enable": true,
-        "speed": 0.6,
-        "direction": "none",
-        "random": true,
-        "straight": false,
-        "out_mode": "out"
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": { "onhover": { "enable": false }, "onclick": { "enable": false } }
-    },
-    "retina_detect": true
-  });
-</script>
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": false }, "onclick": { "enable": false } }
+      },
+      "retina_detect": true
+    });
+  </script>
 
 </body>
 </html>
