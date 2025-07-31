@@ -52,12 +52,6 @@
       z-index: 10;
       max-width: 600px;
       margin-bottom: 80px; /* フッター分の余白 */
-      /* タイピング用 */
-      font-size: 1.1rem;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 0.15em solid #ffd700; /* 縦棒（カーソル）を点滅なしで固定表示 */
-      animation: typing 4s steps(60, end);
       margin-bottom: 2em;
     }
     h1 {
@@ -65,6 +59,22 @@
       font-weight: 900;
       color: #fff;
       margin-bottom: 0.3em;
+
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 0.15em solid #ffd700; /* 縦棒 */
+      animation: typing 4s steps(60, end);
+    }
+    /* 初期透明＋下にズレてる */
+    h2, p.description {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+    /* フェードイン用クラス */
+    .fade-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
     h2 {
       font-size: 1.1rem;
@@ -186,6 +196,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
+  // particles.js 初期化
   particlesJS('particles-js', {
     "particles": {
       "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
@@ -211,6 +222,14 @@
       "events": { "onhover": { "enable": false }, "onclick": { "enable": false } }
     },
     "retina_detect": true
+  });
+
+  // ページロード後にh2とp.descriptionをフェードイン
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelector('h2').classList.add('fade-in');
+      document.querySelector('p.description').classList.add('fade-in');
+    }, 1000);
   });
 </script>
 
