@@ -96,11 +96,12 @@
       box-shadow: 0 0 10px #143826cc, 0 0 20px #14382699;
     }
 
-    /* ここからボタン白色用追加 */
+    /* ボタンを縦並びに */
     .btn-group {
       display: flex;
-      justify-content: center;
-      gap: 1em;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2em;
       margin-top: 1em;
     }
 
@@ -114,6 +115,8 @@
       text-decoration: none;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
+      width: 70%;
       transition: 0.3s ease;
     }
 
@@ -122,11 +125,20 @@
       box-shadow: 0 0 10px #f0f0f0cc, 0 0 20px #f0f0f099;
     }
 
+    /* SVGアイコンのマージン調整 */
+    .btn-white svg {
+      vertical-align: middle;
+      margin-right: 0.5em;
+      fill: #000;
+      width: 20px;
+      height: 20px;
+    }
+
     @media (max-width: 480px) {
       h1 { font-size: 1.8rem; }
       p.description { font-size: 1rem; }
       .btn, .btn-white { font-size: 0.95rem; padding: 0.8em 2em; }
-      .btn-group { gap: 0.8em; }
+      .btn-group { gap: 1em; }
     }
   </style>
 </head>
@@ -152,12 +164,17 @@
 
     <div class="btn-group">
       <a href="https://www.instagram.com/2craph_pc" class="btn btn-white" target="_blank" aria-label="Instagramをフォロー">
-        <svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;" width="20" height="20" fill="#000" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
           <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.25a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm0 1.5a3 3 0 100 6 3 3 0 000-6z"/>
         </svg>
-        <span style="vertical-align: middle; margin-left: 0.5em;">Instagramをフォロー</span>
+        Instagramをフォロー
       </a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn btn-white" target="_blank">事前登録</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn btn-white" target="_blank" aria-label="事前登録フォーム">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+          <path d="M3 17.25V21h3.75l11.06-11.06-3.75-3.75L3 17.25zm17.71-10.04a1.003 1.003 0 00-1.42 0l-2.34 2.34 3.75 3.75 2.34-2.34a1.003 1.003 0 000-1.42l-2.33-2.33z"/>
+        </svg>
+        事前登録
+      </a>
     </div>
   </main>
 
