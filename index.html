@@ -117,7 +117,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 50%; /* 50%に縮小 */
+      width: 40%; /* 40%に縮小 */
       transition: 0.3s ease;
     }
 
@@ -139,7 +139,8 @@
     footer {
       position: fixed;
       bottom: 10px;
-      right: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 100;
     }
     .footer-instagram {
@@ -171,7 +172,8 @@
       .btn-group { gap: 1em; }
       footer {
         bottom: 10px;
-        right: 10px;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .footer-instagram {
         width: 40px;
