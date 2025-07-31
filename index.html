@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>2CRAPH - Coming Soon</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
@@ -22,7 +22,6 @@
       padding: 0 20px;
       position: relative;
     }
-
     .grid-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -33,7 +32,6 @@
       background-size: 6px 6px;
       z-index: 0;
     }
-
     .fade-bottom {
       position: fixed;
       bottom: 0; left: 0;
@@ -42,7 +40,6 @@
       pointer-events: none;
       z-index: 1;
     }
-
     #particles-js {
       position: fixed;
       top: 0; left: 0;
@@ -50,28 +47,24 @@
       pointer-events: none;
       z-index: 2;
     }
-
     main {
       position: relative;
       z-index: 10;
       max-width: 600px;
       margin-bottom: 80px; /* フッター分の余白 */
     }
-
     h1 {
       font-size: 2.4rem;
       font-weight: 900;
       color: #fff;
       margin-bottom: 0.3em;
     }
-
     h2 {
       font-size: 1.1rem;
       font-weight: normal;
       color: #ffd700; /* 黄色に変更 */
       margin-bottom: 1.2em;
     }
-
     p.description {
       font-size: 1.1rem;
       margin-bottom: 2em;
@@ -79,7 +72,6 @@
       text-shadow: 0 0 6px #0008;
       line-height: 1.5;
     }
-
     .btn {
       background-color: #0b261a;
       color: #ffd700;
@@ -91,75 +83,71 @@
       display: inline-block;
       margin: 0.5em;
       transition: 0.3s ease;
-      min-width: 220px;
+      /* 幅は自動で自然なサイズ */
+      min-width: unset;
     }
-
     .btn:hover {
       background-color: #143826;
       box-shadow: 0 0 10px #143826cc, 0 0 20px #14382699;
     }
-
     /* 事前登録ボタンだけ白背景 */
     .btn.register {
       background-color: #fff;
       color: #0b261a;
       border: 2px solid #ffd700;
       transition: color 0.3s ease, background-color 0.3s ease;
-      min-width: 200px;
     }
-
     .btn.register:hover {
       color: #ffd700;
       background-color: #fff;
       box-shadow: none;
       border-color: #ffd700;
     }
-
-    /* Instagramボタンは小さめで中央下に固定 */
+    /* Instagramボタンは四角く中央下に固定 */
     footer {
       position: fixed;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
     footer a.instagram-btn {
       background-color: #ffd700;
       color: #0b261a;
-      border-radius: 50%;
-      padding: 12px 14px;
-      font-size: 20px;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 18px;
       display: inline-block;
       box-shadow: 0 0 8px #ffd700cc;
       text-decoration: none;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-
     footer a.instagram-btn:hover {
       background-color: #e6c200;
       color: #000;
     }
-
     /* フッター内のコピーライト */
     footer small {
-      display: block;
       margin-top: 6px;
       color: #999;
       font-size: 0.75rem;
       text-align: center;
       font-family: sans-serif;
     }
-
+    /* 事前登録ボタン内のアイコン */
+    .btn.register i {
+      margin-right: 8px;
+    }
     @media (max-width: 480px) {
       h1 { font-size: 1.8rem; }
       p.description { font-size: 1rem; }
-      .btn, .btn.register { font-size: 0.95rem; padding: 0.8em 2em; min-width: unset; width: 100%; max-width: 280px; }
-      footer a.instagram-btn { font-size: 18px; padding: 10px 12px; }
+      .btn, .btn.register { font-size: 0.95rem; padding: 0.8em 2em; width: 100%; max-width: 280px; min-width: unset; }
+      footer a.instagram-btn { font-size: 16px; padding: 8px 14px; }
     }
   </style>
-  <!-- Instagram アイコン用のFontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
@@ -181,11 +169,15 @@
     第一号モデル、ただいま製作中。
   </p>
 
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn register" target="_blank">事前登録</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn register" target="_blank">
+    <i class="fas fa-pen-to-square"></i>事前登録
+  </a>
 </main>
 
 <footer>
-  <a href="https://www.instagram.com/2craph_pc" class="instagram-btn" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.instagram.com/2craph_pc" class="instagram-btn" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
   <small>© 2craph.jp</small>
 </footer>
 
