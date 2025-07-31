@@ -19,37 +19,34 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px 60px; /* フッターのスペース確保 */
+      padding: 0 20px 60px;
       position: relative;
     }
 
-    .grid-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none;
-      background-image:
-        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 6px 6px;
-      z-index: 0;
-    }
-
-    .fade-bottom {
-      position: fixed;
-      bottom: 0; left: 0;
-      width: 100%; height: 50%;
-      background: linear-gradient(180deg, transparent 0%, #000 90%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    #particles-js {
+    .grid-overlay, .fade-bottom, #particles-js {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       pointer-events: none;
+      z-index: 1;
+    }
+
+    .grid-overlay {
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 6px 6px;
+    }
+
+    .fade-bottom {
+      top: auto;
+      bottom: 0;
+      height: 50%;
+      background: linear-gradient(180deg, transparent 0%, #000 90%);
       z-index: 2;
     }
+
+    #particles-js { z-index: 3; }
 
     main {
       position: relative;
@@ -57,18 +54,22 @@
       max-width: 600px;
     }
 
+    h1, h2 {
+      white-space: pre-line;
+    }
+
     h1 {
       font-size: 2.4rem;
       font-weight: 900;
-      color: #fff; /* 白 */
+      color: #fff;
       margin-bottom: 0.3em;
+      min-height: 3em;
     }
 
     h2 {
       font-size: 1.1rem;
-      font-weight: normal;
-      color: rgba(255, 215, 0, 0.6); /* 薄い黄色 */
-      margin-bottom: 1.2em;
+      color: rgba(255, 215, 0, 0.6);
+      min-height: 2em;
     }
 
     p.description {
@@ -77,24 +78,6 @@
       color: #e0e0e0;
       text-shadow: 0 0 6px #0008;
       line-height: 1.5;
-    }
-
-    .btn {
-      background-color: #0b261a;
-      color: #ffd700;
-      box-shadow: 0 0 8px #0b261acc, 0 0 15px #0b261a99;
-      border-radius: 8px;
-      padding: 1em 2.5em;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-      margin: 0.5em;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #143826;
-      box-shadow: 0 0 10px #143826cc, 0 0 20px #14382699;
     }
 
     .btn-group {
@@ -156,7 +139,6 @@
 
     .footer-instagram:hover {
       background-color: #f0f0f0;
-      box-shadow: 0 0 10px #f0f0f0cc, 0 0 20px #f0f0f099;
     }
 
     .footer-instagram svg {
@@ -168,91 +150,94 @@
     @media (max-width: 480px) {
       h1 { font-size: 1.8rem; }
       p.description { font-size: 1rem; }
-      .btn, .btn-white { font-size: 0.95rem; padding: 0.8em 2em; }
-      .btn-group { gap: 1em; }
+      .btn-white { font-size: 0.95rem; padding: 0.8em 2em; }
       footer {
         bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
-      }
-      .footer-instagram {
-        width: 40px;
-        height: 40px;
-      }
-      .footer-instagram svg {
-        width: 20px;
-        height: 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="grid-overlay"></div>
-  <div class="fade-bottom"></div>
-  <div id="particles-js"></div>
+<div class="grid-overlay"></div>
+<div class="fade-bottom"></div>
+<div id="particles-js"></div>
 
-  <main>
-    <h1>
-      唯一無二の<br>
-      本格水冷MOD PC<br>
-      2CRAPH（ツークラフ）
-    </h1>
-    <h2>ツークラフが贈る、水冷PCの新時代</h2>
+<main>
+  <h1 id="typing-h1"></h1>
+  <h2 id="typing-h2"></h2>
 
-    <p class="description">
-      一点物のオールインワン水冷PC。<br>
-      スリーブケーブル・美しい配管・静音性と冷却性能。<br>
-      第一号モデル、ただいま製作中。
-    </p>
+  <p class="description">
+    一点物のオールインワン水冷PC。<br>
+    スリーブケーブル・美しい配管・静音性と冷却性能。<br>
+    第一号モデル、ただいま製作中。
+  </p>
 
-    <div class="btn-group">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn btn-white" target="_blank" aria-label="事前登録フォーム">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
-          <path d="M3 17.25V21h3.75l11.06-11.06-3.75-3.75L3 17.25zm17.71-10.04a1.003 1.003 0 00-1.42 0l-2.34 2.34 3.75 3.75 2.34-2.34a1.003 1.003 0 000-1.42l-2.33-2.33z"/>
-        </svg>
-        事前登録
-      </a>
-    </div>
-  </main>
-
-  <footer>
-    <a href="https://www.instagram.com/2craph_pc" class="footer-instagram" target="_blank" aria-label="Instagramをフォロー">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
-        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.25a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm0 1.5a3 3 0 100 6 3 3 0 000-6z"/>
+  <div class="btn-group">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn-white" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M3 17.25V21h3.75l11.06-11.06-3.75-3.75L3 17.25zm17.71-10.04a1.003 1.003 0 00-1.42 0l-2.34 2.34 3.75 3.75 2.34-2.34a1.003 1.003 0 000-1.42l-2.33-2.33z"/>
       </svg>
+      事前登録
     </a>
-  </footer>
+  </div>
+</main>
 
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS('particles-js', {
-      "particles": {
-        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#ffd700" },
-        "shape": { "type": "circle" },
-        "opacity": {
-          "value": 0.3,
-          "random": true,
-          "anim": { "enable": true, "speed": 1.5, "opacity_min": 0.1, "sync": false }
-        },
-        "size": { "value": 3, "random": true },
-        "move": {
-          "enable": true,
-          "speed": 0.6,
-          "direction": "none",
-          "random": true,
-          "straight": false,
-          "out_mode": "out"
-        }
+<footer>
+  <a href="https://www.instagram.com/2craph_pc" class="footer-instagram" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.25a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm0 1.5a3 3 0 100 6 3 3 0 000-6z"/>
+    </svg>
+  </a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS('particles-js', {
+    "particles": {
+      "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#ffd700" },
+      "shape": { "type": "circle" },
+      "opacity": {
+        "value": 0.3,
+        "random": true,
+        "anim": { "enable": true, "speed": 1.5, "opacity_min": 0.1, "sync": false }
       },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": { "onhover": { "enable": false }, "onclick": { "enable": false } }
-      },
-      "retina_detect": true
-    });
-  </script>
+      "size": { "value": 3, "random": true },
+      "move": {
+        "enable": true,
+        "speed": 0.6,
+        "direction": "none",
+        "random": true,
+        "straight": false,
+        "out_mode": "out"
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": { "onhover": { "enable": false }, "onclick": { "enable": false } }
+    },
+    "retina_detect": true
+  });
+
+  // タイピング効果
+  const typeText = async (el, text, speed = 40) => {
+    for (let i = 0; i <= text.length; i++) {
+      el.textContent = text.slice(0, i);
+      await new Promise(r => setTimeout(r, speed));
+    }
+  };
+
+  window.addEventListener('DOMContentLoaded', async () => {
+    const h1 = document.getElementById('typing-h1');
+    const h2 = document.getElementById('typing-h2');
+
+    await typeText(h1, "唯一無二の\n本格水冷MOD PC\n2CRAPH（ツークラフ）", 50);
+    await typeText(h2, "ツークラフが贈る、水冷PCの新時代", 40);
+  });
+</script>
 
 </body>
 </html>
