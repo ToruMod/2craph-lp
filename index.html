@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2CRAPH - Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #0b261a 0%, #000000 100%);
+      overflow: hidden;
+      font-family: 'Merriweather', serif;
+      color: #ffd700;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .grid-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 6px 6px;
+      z-index: 0;
+    }
+
+    .fade-bottom {
+      position: fixed;
+      bottom: 0; left: 0;
+      width: 100%; height: 50%;
+      background: linear-gradient(180deg, transparent 0%, #000 90%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    main {
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 0.3em;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      color: #ccc;
+      margin-bottom: 1.2em;
+    }
+
+    p.description {
+      font-size: 1.1rem;
+      margin-bottom: 2em;
+      color: #e0e0e0;
+      text-shadow: 0 0 6px #0008;
+      line-height: 1.5;
+    }
+
+    .btn {
+      background-color: #0b261a;
+      color: #ffd700;
+      box-shadow: 0 0 8px #0b261acc, 0 0 15px #0b261a99;
+      border-radius: 8px;
+      padding: 1em 2.5em;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0.5em;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #143826;
+      box-shadow: 0 0 10px #143826cc, 0 0 20px #14382699;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.8rem; }
+      p.description { font-size: 1rem; }
+      .btn { font-size: 0.95rem; padding: 0.8em 2em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="grid-overlay"></div>
+<div class="fade-bottom"></div>
+<div id="particles-js"></div>
+
+<main>
+  <h1>Too muchで、<br>Too coolなPCを。</h1>
+  <h2>唯一無二の水冷MOD機 ー 2CRAPH（ツークラフ）</h2>
+
+  <p class="description">
+    一点物のオールインワン水冷PC。<br>
+    スリーブケーブル・美しい配管・静音性と冷却性能。<br>
+    第一号モデル、鋭意製作中。
+  </p>
+
+  <a href="https://www.instagram.com/2craph_pc" class="btn" target="_blank">Instagramをフォロー</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn" target="_blank">事前登録</a>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS('particles-js', {
+    "particles": {
+      "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#ffd700" },
+      "shape": { "type": "circle" },
+      "opacity": {
+        "value": 0.3,
+        "random": true,
+        "anim": { "enable": true, "speed": 1.5, "opacity_min": 0.1, "sync": false }
+      },
+      "size": { "value": 3, "random": true },
+      "move": {
+        "enable": true,
+        "speed": 0.6,
+        "direction": "none",
+        "random": true,
+        "straight": false,
+        "out_mode": "out"
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": { "onhover": { "enable": false }, "onclick": { "enable": false } }
+    },
+    "retina_detect": true
+  });
+</script>
+
+</body>
+</html>
