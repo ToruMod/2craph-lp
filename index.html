@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>2CRAPH - Coming Soon</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     body {
@@ -21,6 +20,7 @@
       align-items: center;
       text-align: center;
       padding: 0 20px;
+      position: relative;
     }
 
     .grid-overlay {
@@ -55,6 +55,7 @@
       position: relative;
       z-index: 10;
       max-width: 600px;
+      margin-bottom: 80px; /* フッター分の余白 */
     }
 
     h1 {
@@ -67,7 +68,7 @@
     h2 {
       font-size: 1.1rem;
       font-weight: normal;
-      color: #ffd700;
+      color: #ffd700; /* 黄色に変更 */
       margin-bottom: 1.2em;
     }
 
@@ -84,12 +85,13 @@
       color: #ffd700;
       box-shadow: 0 0 8px #0b261acc, 0 0 15px #0b261a99;
       border-radius: 8px;
-      padding: 0.8em 2em;
+      padding: 1em 2.5em;
       font-weight: 700;
       text-decoration: none;
       display: inline-block;
-      margin: 0.5em auto;
+      margin: 0.5em;
       transition: 0.3s ease;
+      min-width: 220px;
     }
 
     .btn:hover {
@@ -97,34 +99,67 @@
       box-shadow: 0 0 10px #143826cc, 0 0 20px #14382699;
     }
 
-    footer {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      font-size: 0.75rem;
-      color: #aaa;
-      margin-top: 2em;
+    /* 事前登録ボタンだけ白背景 */
+    .btn.register {
+      background-color: #fff;
+      color: #0b261a;
+      border: 2px solid #ffd700;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      min-width: 200px;
     }
 
-    .instagram-icon {
-      font-size: 1.4rem;
+    .btn.register:hover {
       color: #ffd700;
-      text-decoration: none;
-      margin-bottom: 0.5em;
-      display: inline-block;
-      transition: color 0.3s;
+      background-color: #fff;
+      box-shadow: none;
+      border-color: #ffd700;
     }
 
-    .instagram-icon:hover {
-      color: #fff;
+    /* Instagramボタンは小さめで中央下に固定 */
+    footer {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+    }
+
+    footer a.instagram-btn {
+      background-color: #ffd700;
+      color: #0b261a;
+      border-radius: 50%;
+      padding: 12px 14px;
+      font-size: 20px;
+      display: inline-block;
+      box-shadow: 0 0 8px #ffd700cc;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    footer a.instagram-btn:hover {
+      background-color: #e6c200;
+      color: #000;
+    }
+
+    /* フッター内のコピーライト */
+    footer small {
+      display: block;
+      margin-top: 6px;
+      color: #999;
+      font-size: 0.75rem;
+      text-align: center;
+      font-family: sans-serif;
     }
 
     @media (max-width: 480px) {
       h1 { font-size: 1.8rem; }
       p.description { font-size: 1rem; }
-      .btn { font-size: 0.95rem; padding: 0.6em 1.5em; }
+      .btn, .btn.register { font-size: 0.95rem; padding: 0.8em 2em; min-width: unset; width: 100%; max-width: 280px; }
+      footer a.instagram-btn { font-size: 18px; padding: 10px 12px; }
     }
   </style>
+  <!-- Instagram アイコン用のFontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
@@ -141,19 +176,17 @@
   <h2>ツークラフが贈る、水冷PCの新時代</h2>
 
   <p class="description">
-    一点物のオールインワン水冷PC。<br>
+    世界に一台、あなたのための本格水冷PCを、ゼロから共に作ります。<br>
     スリーブケーブル・美しい配管・静音性と冷却性能。<br>
-    世界に一台、あなたのための本格水冷PCを、ゼロから共に作ります。
+    第一号モデル、ただいま製作中。
   </p>
 
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn" target="_blank">事前登録</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn register" target="_blank">事前登録</a>
 </main>
 
 <footer>
-  <a href="https://www.instagram.com/2craph_pc" class="instagram-icon" target="_blank">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <div>© 2craph.jp</div>
+  <a href="https://www.instagram.com/2craph_pc" class="instagram-btn" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <small>© 2craph.jp</small>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
