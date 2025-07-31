@@ -56,8 +56,8 @@
       font-size: 1.1rem;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 0.15em solid #ffd700;
-      animation: typing 4s steps(60, end), blink-caret 0.75s step-end infinite;
+      border-right: 0.15em solid #ffd700; /* 縦棒（カーソル）を点滅なしで固定表示 */
+      animation: typing 4s steps(60, end);
       margin-bottom: 2em;
     }
     h1 {
@@ -142,9 +142,6 @@
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
-    }
-    @keyframes blink-caret {
-      50% { border-color: transparent; }
     }
     @media (max-width: 480px) {
       h1 { font-size: 1.8rem; }
