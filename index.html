@@ -60,14 +60,14 @@
     h1 {
       font-size: 2.4rem;
       font-weight: 900;
-      color: #fff;
+      color: #fff; /* 白 */
       margin-bottom: 0.3em;
     }
 
     h2 {
       font-size: 1.1rem;
       font-weight: normal;
-      color: #ccc;
+      color: rgba(255, 215, 0, 0.6); /* 薄い黄色 */
       margin-bottom: 1.2em;
     }
 
@@ -97,7 +97,6 @@
       box-shadow: 0 0 10px #143826cc, 0 0 20px #14382699;
     }
 
-    /* ボタンを縦並びに */
     .btn-group {
       display: flex;
       flex-direction: column;
@@ -117,7 +116,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40%; /* 40%に縮小 */
+      width: 40%;
       transition: 0.3s ease;
     }
 
@@ -126,7 +125,6 @@
       box-shadow: 0 0 10px #f0f0f0cc, 0 0 20px #f0f0f099;
     }
 
-    /* SVGアイコンのマージン調整 */
     .btn-white svg {
       vertical-align: middle;
       margin-right: 0.5em;
@@ -135,7 +133,6 @@
       height: 20px;
     }
 
-    /* Instagramアイコンだけのボタン（footer用） */
     footer {
       position: fixed;
       bottom: 10px;
@@ -143,6 +140,7 @@
       transform: translateX(-50%);
       z-index: 100;
     }
+
     .footer-instagram {
       background-color: #fff;
       border-radius: 50%;
@@ -155,10 +153,12 @@
       text-decoration: none;
       transition: 0.3s ease;
     }
+
     .footer-instagram:hover {
       background-color: #f0f0f0;
       box-shadow: 0 0 10px #f0f0f0cc, 0 0 20px #f0f0f099;
     }
+
     .footer-instagram svg {
       fill: #000;
       width: 24px;
@@ -201,11 +201,9 @@
     <h2>ツークラフが贈る、水冷PCの新時代</h2>
 
     <p class="description">
-    一点物のオールインワン水冷PC。<br>
-スリーブケーブル・美しい配管で魅せる、<br>
-静音かつ高性能な冷却システムを実現。<br>
-世界に一台だけのカスタムPCを、あなたに。<br>
-オーダーメイド製作、受注生産対応。
+      一点物のオールインワン水冷PC。<br>
+      スリーブケーブル・美しい配管・静音性と冷却性能。<br>
+      第一号モデル、ただいま製作中。
     </p>
 
     <div class="btn-group">
