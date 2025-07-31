@@ -11,7 +11,7 @@
       margin: 0;
       height: 100vh;
       background: linear-gradient(180deg, #0b261a 0%, #000000 100%);
-      overflow: hidden;
+      overflow-x: hidden;
       font-family: 'Merriweather', serif;
       color: #ffd700;
       display: flex;
@@ -19,7 +19,8 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
+      padding: 0 20px 60px; /* フッターのスペース確保 */
+      position: relative;
     }
 
     .grid-overlay {
@@ -116,7 +117,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 70%;
+      width: 50%; /* 50%に縮小 */
       transition: 0.3s ease;
     }
 
@@ -134,11 +135,52 @@
       height: 20px;
     }
 
+    /* Instagramアイコンだけのボタン（footer用） */
+    footer {
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+      z-index: 100;
+    }
+    .footer-instagram {
+      background-color: #fff;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 8px #fffccccc, 0 0 15px #fffccc99;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .footer-instagram:hover {
+      background-color: #f0f0f0;
+      box-shadow: 0 0 10px #f0f0f0cc, 0 0 20px #f0f0f099;
+    }
+    .footer-instagram svg {
+      fill: #000;
+      width: 24px;
+      height: 24px;
+    }
+
     @media (max-width: 480px) {
       h1 { font-size: 1.8rem; }
       p.description { font-size: 1rem; }
       .btn, .btn-white { font-size: 0.95rem; padding: 0.8em 2em; }
       .btn-group { gap: 1em; }
+      footer {
+        bottom: 10px;
+        right: 10px;
+      }
+      .footer-instagram {
+        width: 40px;
+        height: 40px;
+      }
+      .footer-instagram svg {
+        width: 20px;
+        height: 20px;
+      }
     }
   </style>
 </head>
@@ -163,12 +205,6 @@
     </p>
 
     <div class="btn-group">
-      <a href="https://www.instagram.com/2craph_pc" class="btn btn-white" target="_blank" aria-label="Instagramをフォロー">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
-          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.25a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm0 1.5a3 3 0 100 6 3 3 0 000-6z"/>
-        </svg>
-        Instagramをフォロー
-      </a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnCcFz1C5rYwz1oD8BnKCJRyzji3NvYSC9kbakrMkLNlgCBg/viewform?usp=header" class="btn btn-white" target="_blank" aria-label="事前登録フォーム">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
           <path d="M3 17.25V21h3.75l11.06-11.06-3.75-3.75L3 17.25zm17.71-10.04a1.003 1.003 0 00-1.42 0l-2.34 2.34 3.75 3.75 2.34-2.34a1.003 1.003 0 000-1.42l-2.33-2.33z"/>
@@ -177,6 +213,14 @@
       </a>
     </div>
   </main>
+
+  <footer>
+    <a href="https://www.instagram.com/2craph_pc" class="footer-instagram" target="_blank" aria-label="Instagramをフォロー">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.25a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm0 1.5a3 3 0 100 6 3 3 0 000-6z"/>
+      </svg>
+    </a>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
